@@ -1,1 +1,4 @@
-make momentum!# make_momentum
+# Momentum
+
+Momentum Clone using VanillaJS
+# vanillajs
