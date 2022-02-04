@@ -8,6 +8,11 @@ function onLoginSubmit(event){ //첫번째 argument로 발생된 event에 대한
     const username = loginInput.value; //input의 value를 얻을 수 있음
     console.log(username);
 }
+
+function onLoginBtnClick() {
+    const username = loginInput.value; // username길이에 대한 조건은 index.html에 작성
+    console.log(username);
+}
 // loginButton.addEventListener("click",handleLoginClick);
 
 // click이 아닌 submit감지
