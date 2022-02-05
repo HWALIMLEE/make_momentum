@@ -11,9 +11,10 @@ function onLoginSubmit(event){ //첫번째 argument로 발생된 event에 대한
     event.preventDefault(); // 어떤 event의 기본행동이든지 발생되지 않도록 막는 것(stop!)
     const username = loginInput.value; //input의 value를 얻을 수 있음
     loginForm.classList.add(HIDDEN_CLASSNAME); // name을 제출한 다음 hidden
-    console.log(username);
+    localStorage.setItem("username", username);
     greeting.innerText = `Hello ${username}!` 
     greeting.classList.remove(HIDDEN_CLASSNAME);
+
 }
 
 function onLoginBtnClick() {
