@@ -3,6 +3,11 @@ const toDoInput = toDoForm.querySelector("input");
 // const toDoInput = document.querySelector("#todo-form input"); -> same
 const toDoList = document.querySelector("#todo-list");
 
+const toDos = []; 
+
+function saveToDos(){
+    localStorage.setItem("todos", JSON.stringify(toDos));
+}
 
 function deleteToDo(event){
     console.log(event); //event 확인해 본 결과 어느 버튼에서 클릭된건지 바로 알려줌
@@ -27,7 +32,9 @@ function handleToDoSubmit(event) {
     event.preventDefault(); //바로 새로고침 되지 않음
     const newTodo = toDoInput.value;
     toDoInput.value = ''; //empty
+    toDos.push(newTodo);
     paintToDo(newTodo);
+    saveToDos();
 }
 
 toDoForm.addEventListener("submit", handleToDoSubmit);
