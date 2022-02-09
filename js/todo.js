@@ -3,7 +3,7 @@ const toDoInput = toDoForm.querySelector("input");
 // const toDoInput = document.querySelector("#todo-form input"); -> same
 const toDoList = document.querySelector("#todo-list");
 
-const toDos = []; 
+let toDos = []; 
 const TODOS_KEY = 'todos'
 
 function saveToDos(){
@@ -44,7 +44,8 @@ const savedToDos = localStorage.getItem(TODOS_KEY); // get array
 
 if (savedToDos !== null) {
     const parsedToDos = JSON.parse(savedToDos);
-    parsedToDos.forEach((item) => console.log("this is turn of", item)); //arrow function
+    toDos = parsedToDos; // to restore
+    parsedToDos.forEach(paintToDo); //arrow function, 신기한데
 }
 
 
