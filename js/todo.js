@@ -14,13 +14,15 @@ function deleteToDo(event){
     console.log(event); //event 확인해 본 결과 어느 버튼에서 클릭된건지 바로 알려줌
     // console.dir(event.target.parentElement.innerText);
     const li = event.target.parentElement; //button은 부모를 가지고 있음(li)
+    console.log(li.id);
     li.remove();
 }
 
 function paintToDo(newTodo) {
     const li = document.createElement("li");
+    li.id = newTodo.id; //unique한 task id 생성
     const span = document.createElement("span"); //span은 li 하위에 있어야함
-    span.innerText = newTodo;
+    span.innerText = newTodo.text; //object의 text
     const button = document.createElement("button");
     button.innerText = "❌";
     button.addEventListener("click", deleteToDo);
@@ -33,8 +35,12 @@ function handleToDoSubmit(event) {
     event.preventDefault(); //바로 새로고침 되지 않음
     const newTodo = toDoInput.value;
     toDoInput.value = ''; //empty
-    toDos.push(newTodo);
-    paintToDo(newTodo);
+    const newTodoObj = {
+        text: newTodo,
+        id: Date.now()
+    };
+    toDos.push(newTodoObj);
+    paintToDo(newTodoObj);
     saveToDos();
 }
 
@@ -43,7 +49,7 @@ toDoForm.addEventListener("submit", handleToDoSubmit);
 const savedToDos = localStorage.getItem(TODOS_KEY); // get array
 
 if (savedToDos !== null) {
-    const parsedToDos = JSON.parse(savedToDos);
+    const parsedToDos = JSON.parse(savedToDos); 
     toDos = parsedToDos; // to restore
     parsedToDos.forEach(paintToDo); //arrow function, 신기한데
 }
