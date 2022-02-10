@@ -14,8 +14,10 @@ function deleteToDo(event){
     console.log(event); //event 확인해 본 결과 어느 버튼에서 클릭된건지 바로 알려줌
     // console.dir(event.target.parentElement.innerText);
     const li = event.target.parentElement; //button은 부모를 가지고 있음(li)
-    console.log(li.id);
+    console.log(li.id); // text
     li.remove();
+    toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
+    saveToDos();
 }
 
 function paintToDo(newTodo) {
@@ -51,7 +53,8 @@ const savedToDos = localStorage.getItem(TODOS_KEY); // get array
 if (savedToDos !== null) {
     const parsedToDos = JSON.parse(savedToDos); 
     toDos = parsedToDos; // to restore
-    parsedToDos.forEach(paintToDo); //arrow function, 신기한데
-}
+    parsedToDos.forEach(paintToDo); //paintToDo함수가 parsedToDos에서 argument 받아서 실행
+} 
 
 
+//filter 함수(조건에 맞는 새로운 array 생성)(give new array!)
