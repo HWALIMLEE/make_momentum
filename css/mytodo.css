@@ -1,0 +1,9 @@
+.hidden{
+    display: none;
+}
+
+.box{
+    width: 200px;
+    height: 30px;
+    background: blue;
+}
