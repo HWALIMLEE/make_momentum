@@ -2,15 +2,92 @@
     display: none;
 }
 
+.button{
+    padding: 5px 5px;
+}
+
+.noline{
+    text-decoration: none;
+}
+
+.line {
+    text-decoration: line-through;
+}
+ul {
+    list-style-type: none;
+}
+
 .box{
-    width: 200px;
+    width: 250px;
     height: 30px;
     background: white;
 }
 
 
 #me{
-    position: relative;
-    left: 800px;
+    position: fixed;
+    left: 790px;
+    top: 250px;
+}
+
+#clock{
+    font-style: italic;
+    position: fixed;
+    left: 830px;
+    top: 100px;
+}
+
+#week{
+    position:fixed;
+    left: 865px;
+    top: 150px;
+}
+
+#name{
+    font-style: italic;
+    position: fixed;
+    left: 830px;
     top: 200px;
 }
+
+#weather{
+    font-style: italic;
+    position:fixed;
+    left: 1450px;
+    top: 0px;
+}
+
+#todo{
+    position: fixed;
+    left: 800px;
+    top: 260px;
+}
+
+.todolist{
+    font-family:Helvetica, 		   
+    '맑은 고딕', 'malgun gothic', 		   
+    'Apple SD Gothic Neo', 'Apple SD 산돌고딕 Neo',  		   
+    'Microsoft NeoGothic',  		   
+    'Droid sans', sans-serif; 
+    font-weight: normal;
+    position:relative;
+    left: 780px;
+    top: 300px;
+    color:cornsilk
+}
+
+.jb-x-large{
+    font-size:x-large;
+}
+.jb-xx-large { 
+    font-size: xx-large; 
+}
+
+.back { 
+    background: no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+

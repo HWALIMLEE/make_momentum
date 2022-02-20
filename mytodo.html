@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="height: 100%">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet", href="css/mytodo.css" />
     <title>MyTodoList</title>
 </head>
-<body>
-    <form id="login-form">
+<body style="height: 100%">
+    <form class="hidden" id="login-form">
         <input 
-            id = "me"
+            id="me"
             class="box"
             required
             maxlength="15"
@@ -17,8 +17,29 @@
             size="40"
             placeholder="Hello! What is your name?"
             />
-        <button id="me">Welcome!</button>
+        <!-- <button id="me">Welcome!</button> -->
     </form>
-    <script src="js/mytodo.js"></script>
+    <h1 id="greeting" class="hidden"></h1>
+    <h1 id="clock" class="jb-xx-large">00:00:00</h1>
+    <h2 id="week"></h2>
+    <form id="todo-form" class="hidden">
+        <input 
+        type="text" 
+        class="box" 
+        size="40" 
+        id="todo"
+        placeholder="Write a To Do and Press Enter" 
+        required />
+    </form>
+    <ul id="todo-list"></ul>
+    <div id="weather" class="jb-x-large">
+        <span></span>
+        <span></span>
+    </div>
+    <script src="mytodo/clock.js"></script>
+    <script src="mytodo/background.js"></script>
+    <script src="mytodo/weather.js"></script>
+    <script src="mytodo/greeting.js"></script>
+    <script src="mytodo/todo.js"></script>
 </body>
 </html>
